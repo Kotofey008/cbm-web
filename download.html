@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download | Charms Bar Mica</title>
+  <meta name="description" content="Download Charms Bar Mica for Windows 10 and 11 from GitHub Releases and get started in a few steps.">
+  <meta name="theme-color" content="#f3f3f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#202020" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="download">
+  <div class="mica" aria-hidden="true">
+    <i class="mica__bloom mica__bloom--a"></i><i class="mica__bloom mica__bloom--b"></i>
+    <i class="mica__bloom mica__bloom--c"></i><i class="mica__bloom mica__bloom--d"></i>
+    <i class="mica__grain"></i>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main>
+    <header class="page-head container">
+      <h1 data-reveal data-i18n="dl.title">Download Charms Bar Mica</h1>
+      <p class="lead" data-reveal style="--d:80ms" data-i18n="dl.lead">Beta builds are published on GitHub Releases.</p>
+    </header>
+
+    <section class="section--tight">
+      <div class="container">
+
+        <div class="card dl-box" data-reveal="scale">
+          <div>
+            <h2 data-i18n="dl.box.t">Latest Version</h2>
+            <p data-i18n="dl.box.p">Windows 10 / Windows 11 · requires .NET 7.0 runtime</p>
+          </div>
+          <a class="btn btn--accent btn--lg" href="https://github.com/Kotofey008/charms-bar-mica/releases" target="_blank" rel="noopener">
+            <svg class="i"><use href="#i-download"/></svg>
+            <span class="btn__txt"><strong data-i18n="dl.box.b">Open GitHub Releases</strong><small data-i18n="dl.box.bs">Official download source</small></span>
+          </a>
+        </div>
+
+        <div class="infobar" style="max-width:820px;margin:0 auto 40px" data-reveal>
+          <svg class="i"><use href="#i-warn"/></svg>
+          <div data-i18n-html="dl.warn"><strong>This is not a stable release.</strong> The project is in active development and not meant to be a daily driver for inexperienced users. Download only from <a href="https://github.com/Kotofey008/charms-bar-mica/releases" target="_blank" rel="noopener">GitHub Releases</a>.</div>
+        </div>
+
+        <div class="steps">
+          <div class="card step" data-reveal style="--d:0ms"><div><h3 data-i18n="dl.s1.t">Install .NET 7.0</h3><p data-i18n-html="dl.s1.p">Charms Bar Mica needs the .NET 7.0 runtime. Download it from <a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0" target="_blank" rel="noopener">dotnet.microsoft.com</a> if it is not installed yet.</p></div></div>
+          <div class="card step" data-reveal style="--d:60ms"><div><h3 data-i18n="dl.s2.t">Download the latest release</h3><p data-i18n="dl.s2.p">Open GitHub Releases and grab the newest build. Extract it anywhere you like if it comes as an archive.</p></div></div>
+          <div class="card step" data-reveal style="--d:120ms"><div><h3 data-i18n="dl.s3.t">Run the program</h3><p data-i18n-html="dl.s3.p">Start it and move the cursor to the <b>top-right corner</b>, then drag down, or use the <kbd>Win</kbd> + <kbd>[</kbd> shortcut. On touch screens swipe from the right edge (work in progress).</p></div></div>
+          <!--div class="card step" data-reveal style="--d:180ms"><div><h3 data-i18n="dl.s4.t">Make it yours</h3><p data-i18n-html="dl.s4.p">Pick one of the built-in styles, pin your own items, remap Search or Start to your favourite tools, or tweak the registry - see the <a href="faq.html">FAQ</a>.</p></div></div-->
+        </div>
+
+        <div class="cols-2">
+          <div class="card" data-reveal style="--d:0ms">
+            <h3 data-i18n="dl.req.t">System requirements</h3>
+            <ul>
+              <li data-i18n="dl.req.1">Windows 11 (recommended) or Windows 10</li>
+              <li data-i18n="dl.req.2">.NET 7.0 runtime</li>
+              <li data-i18n="dl.req.3">Optional: DWMBlurGlass or OpenGlass for the Aero look</li>
+            </ul>
+          </div>
+          <div class="card" data-reveal style="--d:70ms">
+            <h3 data-i18n="dl.src.t">Build from source</h3>
+            <p data-i18n-html="dl.src.p">The code lives in the <code>src</code> folder of the repository and is built with Visual Studio 2022. Pull requests are welcome.</p>
+            <p style="margin-top:12px"><a href="https://github.com/Kotofey008/charms-bar-mica" target="_blank" rel="noopener"><span data-i18n="dl.src.l">Browse the repository</span> →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-ru.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Charms Bar Mica</title>
+  <meta name="description" content="Answers to common questions about Charms Bar Mica: hot corners, registry tweaks, multi-monitor, licensing and more.">
+  <meta name="theme-color" content="#f3f3f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#202020" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="faq">
+  <div class="mica" aria-hidden="true">
+    <i class="mica__bloom mica__bloom--a"></i><i class="mica__bloom mica__bloom--b"></i>
+    <i class="mica__bloom mica__bloom--c"></i><i class="mica__bloom mica__bloom--d"></i>
+    <i class="mica__grain"></i>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main>
+    <header class="page-head container">
+      <h1 data-reveal data-i18n="faq.title">Frequently asked questions</h1>
+      <p class="lead" data-reveal style="--d:80ms" data-i18n="faq.lead">Everything about hot corners, registry tweaks, multi-monitor setups and licensing.</p>
+      <div class="search" data-reveal style="--d:140ms">
+        <svg class="i"><use href="#i-search"/></svg>
+        <input id="faq-search" type="search" autocomplete="off" placeholder="Search questions…" data-i18n-attr="placeholder:faq.search" aria-label="Search questions">
+      </div>
+    </header>
+
+    <section class="section--tight">
+      <div class="container">
+        <div class="faq" id="faq-list">
+          <h3 class="faq-group" data-i18n="grp.general">General</h3>
+          <div class="qa" id="complete"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.complete.q">Is this repository the complete edition of Charms Bar Port?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.complete.a"><p>No. This project is <b>in development</b> and should not be used by inexperienced users, or as a daily driver, without understanding the risks involved.</p></div></div></div></div>
+          <div class="qa" id="release"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.release.q">When will this be released?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.release.a"><p>Beta releases are already available on <a href="https://github.com/Kotofey008/charms-bar-mica/releases" target="_blank" rel="noopener">GitHub Releases</a>. The stable release will come out when any of builds will be stable and feature-rich enough.</p></div></div></div></div>
+          <div class="qa" id="win10"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.win10.q">How does this fork look on Windows 10?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.win10.a"><p>Exactly the same as the original <a href="https://github.com/Icepenguins101/charms-bar-port" target="_blank" rel="noopener">Charms Bar Port</a>, except for new Fluent UI icons.</p></div></div></div></div>
+          <div class="qa" id="safe"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.safe.q">Is this safe to use?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.safe.a"><p>Yes, as much as a beta-program can be. Always download releases from sources you trust (aka <a href="https://github.com/Kotofey008/charms-bar-mica/releases" target="_blank" rel="noopener">GitHub Releases</a>) and review the source code if you have concerns.</p></div></div></div></div>
+          <div class="qa" id="win78"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.win78.q">Why does this program not support Windows 7 and Windows 8.1?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.win78.a"><p>Charms Bar Mica is designed for Windows 10 and Windows 11. Windows 8.1 already includes the original Charms Bar, while Windows 7 is outside the project's current scope.</p></div></div></div></div>
+          <h3 class="faq-group" data-i18n="grp.usage">Using it</h3>
+          <div class="qa" id="hotcorners"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.hotcorners.q">How can I disable the hot corners without closing the program?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.hotcorners.a"><p>This requires editing the Windows Registry. I am not responsible for damage caused by incorrect registry modifications.</p><ol><li>Press <kbd>Win</kbd> + <kbd>R</kbd>, type <code>regedit</code> and press Enter.</li><li>Navigate to <pre>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell</pre></li><li>Under <code>ImmersiveShell</code>, create a new key called <code>EdgeUI</code>.</li><li>In <code>EdgeUI</code>, create two DWORD values named <b>DisableTRCorner</b> and <b>DisableBRCorner</b>, and set both to <code>1</code>. Alternatively, create a DWORD named <b>DisableCharmsHint</b> with the value <code>1</code>.</li><li>The hot corners are disabled immediately - no logoff or restart is required.</li></ol><p>To revert, set the values back to <code>0</code> or delete them.</p></div></div></div></div>
+          <div class="qa" id="w10tp"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.w10tp.q">How can I switch to the Windows 10 Technical Preview style?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.w10tp.a"><p>For a true Windows 10 Technical Preview look, stay on the Windows 8.1 Charms Bar theme and edit the Registry. I am not responsible for damage caused by incorrect registry modifications.</p><ol><li>Press <kbd>Win</kbd> + <kbd>R</kbd>, type <code>regedit</code> and press Enter.</li><li>Navigate to <pre>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell</pre></li><li>Under <code>ImmersiveShell</code>, create a key called <code>EdgeUI</code>.</li><li>In <code>EdgeUI</code>, create a DWORD named <b>DisableSettingsCharm</b> and set it to <code>1</code>.</li><li>The Settings panel disappears from the Charms Bar - no logoff or restart is required.</li></ol><p>To revert, set the value back to <code>0</code> or delete the DWORD.</p></div></div></div></div>
+          <div class="qa" id="touch"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.touch.q">I'm using a touch screen. Why does the Action Center always open with the Charms Bar?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.touch.a"><p>Because the Action Center uses the same gesture. Disable that gesture first to start using the Charms Bar on a tablet or touch-enabled PC.</p></div></div></div></div>
+          <div class="qa" id="hotkey"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.hotkey.q">Win+[ is taken. Can you use another hotkey?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.hotkey.a"><p>It is the only hotkey that was found unassigned for anything else. If you have it taken, free up the hotkey or change it in the code and recompile the Chamrs Bar Mica</p></div></div></div></div>
+          <div class="qa" id="multimon"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.multimon.q">How does multi-monitor support work?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.multimon.a"><p>If you have two or more monitors, moving your mouse to another monitor changes the <code>activeScreen</code> parameter (<code>0</code> is monitor 1, <code>1</code> is monitor 2, and so on), moving the Charms Bar to the corresponding screen.</p><p>If it was activated by mouse but has not completely expanded, moving to another monitor forces the Charms Bar to deactivate. This fixes a bug in the original version where the Charms Bar could remain visible on the previous monitor.</p></div></div></div></div>
+          <h3 class="faq-group" data-i18n="grp.trouble">Troubleshooting</h3>
+          <div class="qa" id="stiff"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.stiff.q">Why are the animations stiff?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.stiff.a"><p>The animations are still being improved, so they may not perfectly match the original Windows 8.x behaviour.</p></div></div></div></div>
+          <div class="qa" id="altf4"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.altf4.q">I'm trying to Alt+F4 the program but it won't let me. Why?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.altf4.a"><p>This is a workaround for a crash bug. Use Task Manager if you need to stop the program.</p></div></div></div></div>
+          <div class="qa" id="lag"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.lag.q">Why is it lagging on my machine?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.lag.a"><p>Because this is public beta. I genuinely don't know why it may lag on some machines. If you can reproduce the problem, please report it through the <a href="https://github.com/Kotofey008/charms-bar-mica/issues" target="_blank" rel="noopener">GitHub Issues</a> page with your hardware and Windows version. There should be no performance issues since I've changed network icon behaviour.</p></div></div></div></div>
+          <div class="qa" id="flicker"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.flicker.q">Why is it flickering on my machine?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.flicker.a"><p>This may be hardware-specific. If you can reproduce the problem, please report it through <a href="https://github.com/Kotofey008/charms-bar-mica/issues" target="_blank" rel="noopener">GitHub Issues</a> with your hardware and Windows version.</p></div></div></div></div>
+          <h3 class="faq-group" data-i18n="grp.project">The project</h3>
+          <div class="qa" id="fork"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.fork.q">Can I fork this repository and release my own version?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.fork.a"><p>Technically yes, but the original repository does not provide a license for its code. This project only grants rights to original material contributed by Kotofey008 under the license described in <a href="https://github.com/Kotofey008/charms-bar-mica/blob/main/LICENSE.md" target="_blank" rel="noopener">LICENSE.md</a> (PolyForm Noncommercial 1.0.0).</p><p>Material originating from the original Charms Bar Port repository or other third parties is not relicensed by this project.</p></div></div></div></div>
+          <div class="qa" id="more"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.more.q">Will there be more ports from Windows 8.1?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.more.a"><p>The plan is to try porting more Windows 8.1 features to modern Windows, including hot corners with proper animations and potentially the Start Screen.</p></div></div></div></div>
+          <div class="qa" id="platforms"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.platforms.q">Will there be a version for macOS, Linux and HaikuOS?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.platforms.a"><p>Maybe. Other platforms are interesting to experiment with in the future, but Windows is currently the main target.</p></div></div></div></div>
+          <div class="qa" id="contact"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.contact.q">How can I contact you?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.contact.a"><p>Report bugs, suggest features or discuss contributions through <a href="https://github.com/Kotofey008/charms-bar-mica/issues" target="_blank" rel="noopener">GitHub Issues</a> or by <a href="mailto:contact@mail.0nl.ru">email</a>.</p></div></div></div></div>
+          <p class="empty" id="faq-empty" hidden data-i18n="faq.empty">No questions match your search.</p>
+        </div>
+
+        <div class="card cta" style="margin-top:56px;padding:40px 24px" data-reveal="scale">
+          <h2 style="font-size:28px" data-i18n="faq.cta.t">Still stuck?</h2>
+          <p class="lead" style="margin-bottom:20px" data-i18n="faq.cta.p">Open an issue with your hardware and Windows version - it helps a lot.</p>
+          <div class="hero__cta" style="margin-top:0">
+            <a class="btn btn--accent" href="https://github.com/Kotofey008/charms-bar-mica/issues" target="_blank" rel="noopener"><svg class="i"><use href="#i-bug"/></svg><span data-i18n="faq.cta.b1">Report an issue</span></a>
+            <a class="btn" href="mailto:contact@mail.0nl.ru"><svg class="i"><use href="#i-mail"/></svg><span data-i18n="faq.cta.b2">Send an email</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-ru.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

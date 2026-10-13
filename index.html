@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charms Bar Mica - the Windows 8.x Charms Bar in Mica &amp; Fluent Design</title>
+  <meta name="description" content="Charms Bar Mica is an unofficial Windows 11 Mica/Fluent continuation of the classic Windows 8.x Charms Bar for Windows 10 and 11.">
+  <meta name="theme-color" content="#f3f3f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#202020" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Charms Bar Mica">
+  <meta property="og:description" content="Windows 8/8.1 Charms Bar in modern Fluent Design with native Mica support.">
+  <meta property="og:image" content="https://opengraph.githubassets.com/1/Kotofey008/charms-bar-mica">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="assets/js/theme-init.js"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+  <!-- Mica material: base + blurred "wallpaper" blooms + grain -->
+  <div class="mica" aria-hidden="true">
+    <i class="mica__bloom mica__bloom--a"></i><i class="mica__bloom mica__bloom--b"></i>
+    <i class="mica__bloom mica__bloom--c"></i><i class="mica__bloom mica__bloom--d"></i>
+    <i class="mica__grain"></i>
+  </div>
+
+  <div id="site-header"></div>
+
+  <main id="top">
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+      <div class="hero__lines" aria-hidden="true"><svg id="hero-lines" viewBox="0 0 1000 560" preserveAspectRatio="none"></svg></div>
+
+      <div class="container">
+        <div class="hero__text">
+          <div class="hero__badge" data-reveal><b data-i18n="hero.beta">Beta</b><span data-i18n="hero.badge">Unofficial continuation of the Windows 8.x Charms Bar</span></div>
+          <h1 data-reveal style="--d:60ms">Charms Bar <span>Mica</span></h1>
+          <p class="lead" data-reveal style="--d:120ms" data-i18n="hero.lead1">The Windows 8.x Charms Bar, reborn in Mica and Fluent Design for Windows 10 and 11.</p>
+          <p class="lead" data-reveal style="--d:160ms" data-i18n="hero.lead2">Search, Share, Start, Devices and Settings - right where you remember them.</p>
+
+          <div class="hero__cta" id="lines-center" data-reveal style="--d:220ms">
+            <a class="btn btn--accent btn--lg" href="download.html">
+              <svg class="i"><use href="#i-download"/></svg>
+              <span class="btn__txt"><strong data-i18n="hero.dl">Download</strong><small data-i18n="hero.dl.sub">Beta for Windows 10 / 11</small></span>
+            </a>
+            <a class="btn btn--lg" href="https://github.com/Kotofey008/charms-bar-mica" target="_blank" rel="noopener">
+              <svg class="i i--fill"><use href="#i-github"/></svg>
+              <span class="btn__txt"><strong data-i18n="hero.gh">View on GitHub</strong><small data-i18n="hero.gh.sub">Source &amp; releases</small></span>
+            </a>
+          </div>
+
+          <div class="hero__meta" data-reveal style="--d:300ms">
+            <div><svg class="i"><use href="#i-layers"/></svg><span data-i18n="hero.m1">Native Mica rendering</span></div>
+            <div><svg class="i"><use href="#i-palette"/></svg><span data-i18n="hero.m2">Uses your accent colour</span></div>
+            <div><svg class="i"><use href="#i-code"/></svg><span data-i18n="hero.m3">Source on GitHub</span></div>
+          </div>
+        </div>
+
+        <!-- Interactive desktop demo -->
+        <div class="stage" data-reveal="scale" style="--d:200ms">
+          <div class="desk" id="desk" aria-label="Interactive demo of the Charms Bar">
+            <div class="desk__wall"></div>
+            <div class="desk__win">
+              <div class="desk__title"><i></i><i></i><i></i><b></b></div>
+              <div class="desk__body"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+            <div class="desk__task"><i></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+
+            <button class="desk__hot" id="hot" aria-label="Hot corner"></button>
+
+            <aside class="charms" id="charms" aria-label="Charms">
+              <button class="charm" style="--n:0" data-hint="Search" data-i18n-attr="data-hint:demo.search"><svg class="i"><use href="#i-search"/></svg><span data-i18n="charm.search">Search</span></button>
+              <button class="charm" style="--n:1" data-hint="Share" data-i18n-attr="data-hint:demo.share"><svg class="i"><use href="#i-share"/></svg><span data-i18n="charm.share">Share</span></button>
+              <button class="charm" style="--n:2" data-hint="Start" data-i18n-attr="data-hint:demo.start"><svg class="i"><use href="#i-start"/></svg><span data-i18n="charm.start">Start</span></button>
+              <button class="charm" style="--n:3" data-hint="Devices" data-i18n-attr="data-hint:demo.devices"><svg class="i"><use href="#i-devices"/></svg><span data-i18n="charm.devices">Devices</span></button>
+              <button class="charm" style="--n:4" data-hint="Settings" data-i18n-attr="data-hint:demo.settings"><svg class="i"><use href="#i-settings"/></svg><span data-i18n="charm.settings">Settings</span></button>
+            </aside>
+
+            <div class="clock" aria-hidden="true">
+              <div class="clock__time" id="clock-time">12:25</div>
+              <div class="clock__date" id="clock-date">Monday, December 25</div>
+              <div class="clock__icons"><svg class="i"><use href="#i-wifi"/></svg><svg class="i"><use href="#i-battery"/></svg></div>
+            </div>
+          </div>
+
+          <div class="stage__bar">
+            <span class="stage__hint"><svg class="i"><use href="#i-cursor"/></svg><span data-i18n="demo.hint">Hover the top-right corner of the screen</span></span>
+            <button class="btn" id="demo-toggle" aria-pressed="false"><svg class="i"><use href="#i-layers"/></svg><span data-i18n="demo.toggle">Toggle Charms</span></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= FEATURES ================= -->
+    <section class="section" id="features">
+      <div class="container">
+
+        <!-- Row 1: how it opens -->
+        <div class="row">
+          <div class="row__text" data-reveal="left">
+            <span class="eyebrow" data-i18n="f1.eyebrow">How it opens</span>
+            <h2 class="h-section" data-i18n="f1.title">Hot corners, gestures and shortcuts</h2>
+            <p class="lead" data-i18n="f1.text">Move the cursor to the top-right corner and drag down - exactly like on Windows 8.x. On a touch screen, swipe from the right edge toward the center.</p>
+            <ul class="ticks">
+              <li><svg class="i"><use href="#i-cursor"/></svg><span data-i18n-html="f1.t1"><b>Mouse:</b> top-right corner, then drag down</span></li>
+              <li><svg class="i"><use href="#i-touch"/></svg><span data-i18n-html="f1.t2"><b>Touch:</b> swipe from the right edge <span class="tag">WIP</span></span></li>
+              <li><svg class="i"><use href="#i-keyboard"/></svg><span data-i18n-html="f1.t3"><b>Keyboard:</b> <kbd>Win</kbd> + <kbd>[</kbd> <span class="tag">temporarily disabled</span></span></li>
+            </ul>
+          </div>
+          <div class="card gesture" data-reveal="right">
+            <div class="gesture__screen" aria-hidden="true">
+              <div class="gesture__bar"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="gesture__cursor"><svg class="i"><use href="#i-cursor"/></svg></div>
+            </div>
+            <div class="gesture__keys">
+              <span><svg class="i"><use href="#i-cursor"/></svg><span data-i18n="f1.v1">Corner + drag</span></span>
+              <span><svg class="i"><use href="#i-touch"/></svg><span data-i18n="f1.v2">Edge swipe</span></span>
+              <span><svg class="i"><use href="#i-keyboard"/></svg><kbd>Win</kbd>+<kbd>[</kbd></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: five charms -->
+        <div class="row row--rev">
+          <div class="row__text" data-reveal="right">
+            <span class="eyebrow" data-i18n="f2.eyebrow">The charms</span>
+            <h2 class="h-section" data-i18n="f2.title">Five charms, familiar and faster</h2>
+            <p class="lead" data-i18n="f2.text">Each charm talks to both classic Win32 programs and supported Metro/UWP apps.</p>
+          </div>
+          <div class="charm-list" data-reveal="left">
+            <div class="card card--reveal charm-card"><div class="charm-card__ico"><svg class="i"><use href="#i-search"/></svg></div><div><h3 data-i18n="charm.search">Search</h3><p data-i18n-html="c1.p">Opens the taskbar search on Win32 programs (easily remappable, e.g. to <a href="https://github.com/srwi/EverythingToolbar" target="_blank" rel="noopener">EverythingToolbar</a>) or the Search charm in supported Metro/UWP apps.</p></div></div>
+            <div class="card card--reveal charm-card"><div class="charm-card__ico"><svg class="i"><use href="#i-share"/></svg></div><div><h3 data-i18n="charm.share">Share</h3><p data-i18n="c2.p">Opens the Share charm.</p></div></div>
+            <div class="card card--reveal charm-card"><div class="charm-card__ico"><svg class="i"><use href="#i-start"/></svg></div><div><h3 data-i18n="charm.start">Start</h3><p data-i18n-html="c3.p">Opens the Start menu. With <a href="https://github.com/Open-Shell/Open-Shell-Menu" target="_blank" rel="noopener">Open-Shell</a> you can remap it to open that Start menu - or disable the button entirely.</p></div></div>
+            <div class="card card--reveal charm-card"><div class="charm-card__ico"><svg class="i"><use href="#i-devices"/></svg></div><div><h3 data-i18n="charm.devices">Devices</h3><p data-i18n="c4.p">Opens the Connect charm. In supported Metro/UWP apps it opens the print dialog.</p></div></div>
+            <div class="card card--reveal charm-card"><div class="charm-card__ico"><svg class="i"><use href="#i-settings"/></svg></div><div><h3 data-i18n="charm.settings">Settings</h3><p data-i18n="c5.p">Opens the Settings app on Win32 programs, or the Settings charm in supported Metro/UWP apps.</p></div></div>
+          </div>
+        </div>
+
+        <!-- Row 3: Mica / DWM -->
+        <div class="row">
+          <div class="row__text" data-reveal="left">
+            <span class="eyebrow" data-i18n="f3.eyebrow">New in this fork</span>
+            <h2 class="h-section" data-i18n="f3.title">Native Mica, built on DWM</h2>
+            <p class="lead" data-i18n="f3.text">The bar is drawn by the Desktop Window Manager itself, so it blends with Windows instead of imitating it.</p>
+            <ul class="ticks">
+              <li><svg class="i"><use href="#i-check"/></svg><span data-i18n-html="f3.t1"><b>Native DWM</b> window rendering</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-i18n-html="f3.t2">Full support for <b>DWMBlurGlass</b> and <b>OpenGlass</b></span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-i18n-html="f3.t3"><b>Mica by default</b> on Windows 11</span></li>
+              <li><svg class="i"><use href="#i-check"/></svg><span data-i18n-html="f3.t4">Fluent UI System Icons</span></li>
+            </ul>
+          </div>
+          <div class="materials" data-reveal="right">
+            <div class="card material"><div class="material__sw"><div class="material__bg"></div><div class="material__pane material__pane--mica">Mica</div></div><h3 data-i18n="mat.mica">Mica</h3><p data-i18n="mat.mica.p">Default on Windows 11</p></div>
+            <div class="card material"><div class="material__sw"><div class="material__bg"></div><div class="material__pane material__pane--glass">Glass</div></div><h3 data-i18n="mat.glass">OpenGlass</h3><p data-i18n="mat.glass.p">Aero look via DWMBlurGlass</p></div>
+            <div class="card material"><div class="material__sw"><div class="material__bg"></div><div class="material__pane material__pane--hc">Aa</div></div><h3 data-i18n="mat.hc">High contrast</h3><p data-i18n="mat.hc.p">Respects system contrast themes</p></div>
+          </div>
+        </div>
+
+        <!-- Row 4: styles -->
+        <!--div class="center" style="margin-top:120px">
+          <div data-reveal>
+            <span class="eyebrow" data-i18n="f4.eyebrow">Fully designable</span>
+            <h2 class="h-section" data-i18n="f4.title">Pick an era - or define your own</h2>
+            <p class="lead" data-i18n="f4.text">Five built-in styles ship by default, plus a custom theme you can describe yourself.</p>
+          </div>
+          <div class="styles">
+            <div class="card card--reveal card--lift style style--w7" data-reveal style="--d:0ms"><div class="style__prev"></div><h3 data-i18n="st.w7">Windows 7 Metro concept</h3><p data-i18n="st.w7.p">A glassy take on the Metro idea</p></div>
+            <div class="card card--reveal card--lift style style--w8dp" data-reveal style="--d:70ms"><div class="style__prev"></div><h3 data-i18n="st.w8dp">Windows 8 Developer Preview</h3><p data-i18n="st.w8dp.p">The very first Charms Bar</p></div>
+            <div class="card card--reveal card--lift style style--w81" data-reveal style="--d:140ms"><div class="style__prev"></div><h3 data-i18n="st.w81">Windows 8.1 Update 3</h3><p data-i18n="st.w81.p">The classic you remember</p></div>
+            <div class="card card--reveal card--lift style style--w11m" data-reveal style="--d:0ms"><div class="style__prev"></div><h3 data-i18n="st.w11m">Windows 11 Metro concept</h3><p data-i18n="st.w11m.p">Metro, re-imagined for 11</p></div>
+            <div class="card card--reveal card--lift style style--w11f" data-reveal style="--d:70ms"><div class="style__prev"></div><h3 data-i18n="st.w11f">Windows 11 Fluent concept</h3><p data-i18n="st.w11f.p">Mica, rounded and modern</p></div>
+            <div class="card card--reveal card--lift style style--custom" data-reveal style="--d:140ms"><div class="style__prev"></div><h3 data-i18n="st.custom">Custom theme</h3><p data-i18n="st.custom.p">Define your own look</p></div>
+          </div>
+        </div-->
+      </div>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <section class="section--tight" aria-hidden="true">
+      <div class="marquee"><div class="marquee__track" id="marquee">
+        <span class="chip"><svg class="i"><use href="#i-layers"/></svg>Mica</span>
+        <span class="chip"><svg class="i"><use href="#i-palette"/></svg>Fluent Design</span>
+        <span class="chip"><svg class="i"><use href="#i-sparkle"/></svg>DWM</span>
+        <span class="chip"><svg class="i"><use href="#i-check"/></svg>OpenGlass</span>
+        <span class="chip"><svg class="i"><use href="#i-check"/></svg>DWMBlurGlass</span>
+        <span class="chip"><svg class="i"><use href="#i-monitors"/></svg>Multi-monitor</span>
+        <span class="chip"><svg class="i"><use href="#i-touch"/></svg>Touch-friendly</span>
+        <span class="chip"><svg class="i"><use href="#i-contrast"/></svg>Light / Dark / High contrast</span>
+        <span class="chip"><svg class="i"><use href="#i-globe"/></svg>English · Русский</span>
+        <span class="chip"><svg class="i"><use href="#i-pin"/></svg>Pin anything</span>
+      </div></div>
+    </section>
+
+    <!-- ================= EVERYTHING ELSE ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="center" data-reveal>
+          <span class="eyebrow" data-i18n="g.eyebrow">Already included</span>
+          <h2 class="h-section" data-i18n="g.title">Everything you loved about the original</h2>
+          <p class="lead" data-i18n="g.text">Charms Bar Mica is based on Windows 8.1 Update 3 and keeps its behaviour - with a lot more polish.</p>
+        </div>
+        <div class="grid">
+          <div class="card card--reveal fcard" data-reveal style="--d:0ms"><svg class="i"><use href="#i-clock"/></svg><h3 data-i18n="g1.t">Format-aware</h3><p data-i18n="g1.p">Uses the OS time and date formats (custom formats are not supported yet).</p></div>
+          <div class="card card--reveal fcard" data-reveal style="--d:50ms"><svg class="i"><use href="#i-globe"/></svg><h3 data-i18n="g2.t">Language-aware</h3><p data-i18n="g2.p">Switches automatically depending on your OS language.</p></div>
+          <div class="card card--reveal fcard" data-reveal style="--d:100ms"><svg class="i"><use href="#i-palette"/></svg><h3 data-i18n="g3.t">System accent colours</h3><p data-i18n="g3.p">Picks up the accent colour you chose in Windows.</p></div>
+          <div class="card card--reveal fcard" data-reveal style="--d:150ms"><svg class="i"><use href="#i-wifi"/></svg><h3 data-i18n="g4.t">Network &amp; battery</h3><p data-i18n="g4.p">Status icons for network and battery are included.</p></div>
+
+          <div class="card card--reveal fcard" data-reveal style="--d:0ms"><svg class="i"><use href="#i-contrast"/></svg><h3 data-i18n="g5.t">Light, dark, contrast</h3><p data-i18n="g5.p">Supports high contrast and light/dark mode preferences.</p></div>
+          <div class="card card--reveal fcard" data-reveal style="--d:50ms"><svg class="i"><use href="#i-sparkle"/></svg><h3 data-i18n="g6.t">Fully animated</h3><p data-i18n="g6.p">Emulates Windows 8.x motion - and can be disabled in the OS settings.</p></div>
+          <div class="card card--reveal fcard" data-reveal style="--d:100ms"><svg class="i"><use href="#i-monitors"/></svg><h3 data-i18n="g7.t">Multi-monitor</h3><p data-i18n="g7.p">The bar follows your mouse to the active screen.</p></div>
+          <div class="card card--reveal fcard" data-reveal style="--d:150ms"><svg class="i"><use href="#i-touch"/></svg><h3 data-i18n="g8.t">Touch-friendly</h3><p data-i18n="g8.p">Built for touch screens - the edge swipe gesture is still in progress.</p></div>
+
+          <!--div class="card card--reveal fcard" data-reveal style="--d:0ms"><svg class="i"><use href="#i-panels"/></svg><h3 data-i18n="g9.t">Customisable panels</h3><p data-i18n="g9.p">Remove any panel through the Registry Editor.</p></div-->
+          <!--div class="card card--reveal fcard" data-reveal style="--d:50ms"><svg class="i"><use href="#i-pin"/></svg><h3 data-i18n="g10.t">Pin anything</h3><p data-i18n="g10.p">Add whatever you need to the Charms Bar for quick access.</p></div-->
+          <div class="card card--reveal fcard" data-reveal style="--d:100ms"><svg class="i"><use href="#i-swap"/></svg><h3 data-i18n="g11.t">Win32 ⇄ Metro</h3><p data-i18n="g11.p">Switch modes for the currently focused program.</p></div>
+          <div class="card card--reveal fcard" data-reveal style="--d:150ms"><svg class="i"><use href="#i-key"/></svg><h3 data-i18n="g12.t">Win 8.x registry keys</h3><p data-i18n="g12.p">Understands the registry keys of the Windows 8.x era.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREENSHOTS ================= -->
+    <section class="section" id="screenshots">
+      <div class="container center">
+        <div data-reveal>
+          <span class="eyebrow" data-i18n="s.eyebrow">Screenshots</span>
+          <h2 class="h-section" data-i18n="s.title">See it in action</h2>
+          <p class="lead" data-i18n="s.text">Light, dark, OpenGlass and high-contrast variants straight from the repository.</p>
+        </div>
+
+        <div class="pivot" id="pivot" role="tablist" data-reveal>
+          <span class="pivot__ind" id="pivot-ind"></span>
+          <button class="pivot__btn" role="tab" data-file="Win11_Light.png" data-i18n="s.light">Light</button>
+          <button class="pivot__btn" role="tab" data-file="Win11_Dark.png" data-i18n="s.dark">Dark</button>
+          <button class="pivot__btn" role="tab" data-file="Win11_OpenGlass.png" data-i18n="s.glass">OpenGlass</button>
+          <button class="pivot__btn" role="tab" data-file="Win11_LightContrast.png" data-i18n="s.lc">Light contrast</button>
+          <button class="pivot__btn" role="tab" data-file="Win11_DarkContrast.png" data-i18n="s.dc">Dark contrast</button>
+        </div>
+
+        <div class="shot loading" id="shot" data-reveal="scale">
+          <img id="shot-img" alt="Charms Bar Mica screenshot" decoding="async">
+          <div class="shot__fallback">
+            <svg class="i" style="width:32px;height:32px"><use href="#i-warn"/></svg>
+            <p data-i18n="s.fail">The screenshot could not be loaded (are you offline?).</p>
+            <a class="btn" target="_blank" rel="noopener" href="https://github.com/Kotofey008/charms-bar-mica/tree/main/resource"><span data-i18n="s.open">Open in repository</span><svg class="i"><use href="#i-external"/></svg></a>
+          </div>
+        </div>
+        <p class="note" data-i18n="s.note">These screenshots are taken from the repository and may be outdated.</p>
+      </div>
+    </section>
+
+    <!-- ================= REQUIREMENTS ================= -->
+    <section class="section--tight">
+      <div class="container">
+        <div class="center" data-reveal style="margin-bottom:32px">
+          <h2 class="h-section" data-i18n="r.title">Requirements</h2>
+        </div>
+        <div class="req">
+          <div class="card req__item" data-reveal style="--d:0ms"><svg class="i"><use href="#i-start"/></svg><div><h3 data-i18n="r1.t">Windows 11 recommended</h3><p data-i18n="r1.p">Windows 10 is supported too - it looks like the original Charms Bar Port, plus new Fluent UI icons.</p></div></div>
+          <div class="card req__item" data-reveal style="--d:70ms"><svg class="i"><use href="#i-code"/></svg><div><h3>.NET 7.0</h3><p><a href="https://dotnet.microsoft.com/en-us/download/dotnet/7.0" target="_blank" rel="noopener" data-i18n="r2.p">Download from Microsoft</a></p></div></div>
+          <div class="card req__item" data-reveal style="--d:140ms"><svg class="i"><use href="#i-warn"/></svg><div><h3 data-i18n="r3.t">Beta software</h3><p data-i18n="r3.p">In development: not a stable release and not a daily-driver for inexperienced users.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="card cta" data-reveal="scale">
+          <h2 data-i18n="cta.title">Download</h2>
+          <p class="lead" data-i18n="cta.text">Download the latest beta from GitHub Releases.</p>
+          <div class="hero__cta" style="margin-top:0">
+            <a class="btn btn--accent btn--lg" href="https://github.com/Kotofey008/charms-bar-mica/releases" target="_blank" rel="noopener"><svg class="i"><use href="#i-download"/></svg><span class="btn__txt"><strong data-i18n="cta.dl">GitHub Releases</strong><small data-i18n="cta.dl.sub">Latest beta build</small></span></a>
+            <a class="btn btn--lg" href="download.html"><svg class="i"><use href="#i-arrow"/></svg><span class="btn__txt"><strong data-i18n="cta.how">Install guide</strong><small data-i18n="cta.how.sub">Step by step</small></span></a>
+          </div>
+          <div class="infobar"><svg class="i"><use href="#i-warn"/></svg><div data-i18n-html="cta.warn">Always download releases from sources you trust - preferably <strong>GitHub Releases</strong>.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section--tight">
+      <div class="container">
+        <div class="center" data-reveal><h2 class="h-section" data-i18n="q.title">Frequently asked</h2></div>
+        <div class="faq" data-reveal>
+          <div class="qa" id="safe"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.safe.q">Is this safe to use?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body" data-i18n-html="qa.safe.a"><p>It should be safe, but this is an unofficial project under active development. Always download releases from sources you trust (aka <a href="https://github.com/Kotofey008/charms-bar-mica/releases" target="_blank" rel="noopener">GitHub Releases</a>) and review the source code if you have concerns.</p></div></div></div></div>
+          <div class="qa" id="hotcorners"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.hot.q">How can I disable the hot corners without closing the program?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body"><p data-i18n-html="qa.hot.a">Create two DWORD values <code>DisableTRCorner</code> and <code>DisableBRCorner</code> set to <code>1</code> under <code>HKCU\Software\Microsoft\Windows\CurrentVersion\ImmersiveShell\EdgeUI</code>. The change applies immediately. Full steps are on the FAQ page.</p></div></div></div></div>
+          <div class="qa" id="win78"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.old.q">Why no support for Windows 7 and 8.1?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body"><p data-i18n="qa.old.a">Charms Bar Mica is designed for Windows 10 and 11. Windows 8.1 already has the original Charms Bar, while Windows 7 is outside the project's current scope.</p></div></div></div></div>
+          <div class="qa" id="multimon"><button class="qa__q" aria-expanded="false"><span data-i18n="qa.mm.q">How does multi-monitor support work?</span><svg class="i"><use href="#i-chevron"/></svg></button><div class="qa__a"><div><div class="qa__body"><p data-i18n="qa.mm.a">Moving the mouse to another monitor changes the active screen and moves the Charms Bar there. If it was activated by mouse but not fully expanded, it deactivates - fixing a bug in the original where it stayed on the previous monitor.</p></div></div></div></div>
+          <p class="qa__link center"><a href="faq.html"><span data-i18n="q.more">More questions? Visit the full FAQ</span> →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <dialog class="lightbox" id="lightbox"><button class="btn btn--icon" id="lightbox-close" aria-label="Close"><svg class="i"><use href="#i-close"/></svg></button><img alt=""></dialog>
+
+  <script src="assets/js/icons.js"></script>
+  <script src="assets/js/i18n-ru.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
